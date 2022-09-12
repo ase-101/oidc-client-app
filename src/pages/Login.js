@@ -1,14 +1,10 @@
 import React from "react";
-import Header from "../components/Header"
-import Pin from "../components/Pin"
+import Login from "../components/Login";
 
 export default function LoginPage() {
   return (
     <>
-      <Header
-        heading="Health Services"
-      />
-      <Pin />
+      <Login />
     </>
   )
 }

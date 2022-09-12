@@ -55,41 +55,45 @@ export default function UserProfilePage() {
 
   let el = (
     <>
-      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded bg-opacity-70" >
-        <div className="px-4 py-4 flex-auto" >
-          <div
-            className=" px-4 py-4 flex justify-center">
-            <img
-              alt="profile picture"
-              className="h-30 w-30"
-              src="https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" />
-          </div>
+      <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-80 py-24 md:flex-row flex-col items-center">
+          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded" style={{ background: '#F2F4F4' }}>
+            <div className="px-4 py-10 flex-auto" >
+              <div
+                className=" px-3 py-3 flex justify-center">
+                <img
+                  alt="profile picture"
+                  className="h-20 w-20"
+                  src="User-Profile-Icon.png" />
+              </div>
 
-          <div className="px-4 py-4">
-            <div className="flex justify-center">
-              Welcome to Health services
-            </div>
-            <div className="flex justify-center">
-              {userInfo?.given_name}
-            </div>
-          </div>
+              <div className="px-4 py-4">
+                <div className="flex justify-center">
+                  Welcome to Health services
+                </div>
+                <div className="flex justify-center">
+                  {userInfo?.given_name}
+                </div>
+              </div>
 
-          <div class="grid grid-cols-2 gap-4">
-            <div className="flex justify-start">Email Address</div>
-            <div className="flex justify-end">{userInfo?.email}</div>
-            <div className="flex justify-start">Gender</div>
-            <div className="flex justify-end">{userInfo?.gender}</div>
-            <div className="flex justify-start">Phone number</div>
-            <div className="flex justify-end">{userInfo?.phone}</div>
-            <div className="flex justify-start">Birth Date</div>
-            <div className="flex justify-end">{userInfo?.birthdate}</div>
+              <div class="grid grid-cols-2 gap-4">
+                <div className="flex justify-start">Email Address</div>
+                <div className="flex justify-end">{userInfo?.email}</div>
+                <div className="flex justify-start">Gender</div>
+                <div className="flex justify-end">{userInfo?.gender}</div>
+                <div className="flex justify-start">Phone number</div>
+                <div className="flex justify-end">{userInfo?.phone}</div>
+                <div className="flex justify-start">Birth Date</div>
+                <div className="flex justify-end">{userInfo?.birthdate}</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       {
         error && (
           <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
-            Error: {error}
+            <p class="text-center">Error: {error}</p>
           </div>
         )
       }
