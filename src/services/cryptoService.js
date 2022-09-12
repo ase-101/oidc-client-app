@@ -1,7 +1,7 @@
 
 import * as jose from 'jose';
 
-const idpServerURL = process.env.REACT_APP_IDP_BASE_URL;
+const idpServerURL = process.env.REACT_APP_AUDIENCE_URL;
 
 const public_private_key_jwk = {
     "p": "7iQxO-m5ikmNS0iqQ72CIQMIl0YIWVd85pCxfDsUM9EEUtqQoT8u1N8KpdpudFpWYDfRN1Qe2Kg0VflQ71ypATYGRumOpyZpOaABcVR1G2qoc8zDRXQtvjY9dJayVtu8DgPe6_B_wz-Dirmx8GbviqN-LGxLtZBWrK87_7alIIM",
