@@ -1,7 +1,9 @@
 import axios from "axios";
+import { decodeJWT } from "./cryptoService";
 
 const baseUrl = process.env.REACT_APP_IDP_BASE_URL;
 const getTokenEndPoint = "/oauth/token";
+const getUserInfoEndPoint = "/oidc/userinfo";
 
 
 const post_GetToken = async (
@@ -30,4 +32,15 @@ const post_GetToken = async (
   return response.data;
 };
 
-export { post_GetToken }
+const get_GetUserInfo = async (access_token) => {
+  const endpoint = baseUrl + getUserInfoEndPoint;
+  const response = await axios.get(endpoint, {
+    headers: {
+      "Authorization": "Bearer " + access_token,
+    },
+  });
+
+  return decodeJWT(response.data);
+};
+
+export { post_GetToken, get_GetUserInfo }

@@ -28,7 +28,7 @@ export default function Pin() {
   let display = clientDetails.display;
   let prompt = clientDetails.prompt;
   let acr_values = clientDetails.acr_values;
-  let claims = clientDetails.claims;
+  let encodedClaims = encodeURI(JSON.stringify(clientDetails.claims));
 
 
   let uri_idp_UI = uibaseUrl + authorizeEndpoint
@@ -40,7 +40,7 @@ export default function Pin() {
     + "&display=" + display
     + "&prompt=" + prompt
     + "&acr_values=" + acr_values
-    + "&claims=" + claims
+    + "&claims=" + encodedClaims
 
 
   return (
